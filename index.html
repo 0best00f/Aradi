@@ -6,6 +6,8 @@
   <meta name="description" content="منصة شركة الراضي العقارية للبحث عن العقارات والمشاريع والخدمات العقارية." />
   <meta name="theme-color" content="#0B1F33" />
   <title>الراضي العقارية | منصة عقارية متكاملة</title>
+  <link rel="icon" type="image/png" href="./al-radhi-logo.png" />
+  <link rel="preload" as="image" href="./al-radhi-logo.png" fetchpriority="high" />
 
   <!-- PWA Manifest & App Metas -->
   <link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIuinproduinqdin2Yog2KfZhNi52YLYp9ix2YrYqSIsCiAgInNob3J0X25hbWUiOiIg2KfZhNix2KfYt9mKICIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMEIxRjMzIiwKICAidGhlbWVfY29sb3IiOiAiIzBCMUYzMyIKfQ==" />
@@ -197,6 +199,61 @@
       }
     }
 
+    /* Al-Radhi Brand Logo — Premium Hero */
+    .alradhi-logo{width:100%;height:100%;object-fit:contain;display:block;filter:drop-shadow(0 10px 28px rgba(200,169,107,.28));}
+    .hero-logo-wrap{
+      position:relative;
+      width:clamp(118px,19vw,190px);
+      height:clamp(118px,19vw,190px);
+      padding:18px;
+      border-radius:42px;
+      background:linear-gradient(145deg,rgba(255,255,255,.30),rgba(11,31,51,.48));
+      border:1px solid rgba(200,169,107,.45);
+      box-shadow:0 18px 55px rgba(0,0,0,.28),0 0 35px rgba(200,169,107,.14),inset 0 0 35px rgba(200,169,107,.10);
+      backdrop-filter:blur(14px);
+      -webkit-backdrop-filter:blur(14px);
+      animation:logoFloat 5s ease-in-out infinite;
+      isolation:isolate;
+    }
+    .hero-logo-wrap::before{content:'';position:absolute;inset:-8px;border-radius:50px;border:1px solid rgba(224,196,134,.22);box-shadow:0 0 25px rgba(200,169,107,.10);animation:logoRing 3.5s ease-in-out infinite;pointer-events:none;}
+    .hero-logo-wrap::after{content:'';position:absolute;inset:12%;border-radius:32px;background:radial-gradient(circle,rgba(224,196,134,.13),transparent 68%);z-index:-1;pointer-events:none;}
+    @keyframes logoFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-8px) rotate(.5deg)}}
+    @keyframes logoRing{0%,100%{opacity:.25;transform:scale(.98)}50%{opacity:.78;transform:scale(1.045)}}
+
+    /* Hero chip: readable in both light and dark modes */
+    .hero-platform-chip{
+      color:var(--text-primary) !important;
+      background:rgba(255,255,255,.72);
+      border-color:rgba(200,169,107,.55);
+      box-shadow:0 8px 24px rgba(11,31,51,.10),inset 0 1px 0 rgba(255,255,255,.65);
+      text-shadow:0 1px 10px rgba(255,255,255,.35);
+    }
+    [data-theme="dark"] .hero-platform-chip{
+      color:#F8FAFC !important;
+      background:rgba(11,31,51,.72);
+      border-color:rgba(224,196,134,.42);
+      box-shadow:0 10px 28px rgba(0,0,0,.28),inset 0 1px 0 rgba(255,255,255,.06);
+      text-shadow:0 2px 12px rgba(0,0,0,.55);
+    }
+
+    /* Headline gold line: stronger hierarchy + elegant shadow */
+    .hero-gold-title{
+      display:inline-block;
+      text-shadow:0 4px 18px rgba(140,105,46,.20);
+      filter:drop-shadow(0 3px 8px rgba(140,105,46,.12));
+    }
+    [data-theme="dark"] .hero-gold-title{
+      text-shadow:0 4px 20px rgba(224,196,134,.12);
+      filter:drop-shadow(0 3px 9px rgba(0,0,0,.35));
+    }
+
+    @media (max-width:640px){
+      .hero-logo-wrap{width:126px;height:126px;padding:15px;border-radius:34px;margin-inline-start:7vw;}
+      .hero-logo-wrap::before{border-radius:42px;}
+      .hero-platform-chip{font-size:.70rem;line-height:1.5;}
+    }
+    @media (prefers-reduced-motion:reduce){.hero-logo-wrap,.hero-logo-wrap::before,.premium-pulse-dot{animation:none}}
+
     /* Bottom Navigation Styles */
     .bottom-nav {
       position: fixed;
@@ -328,7 +385,7 @@
   <div id="intro-screen" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#0B1F33] transition-opacity duration-500">
     <div class="text-center">
       <div class="mx-auto mb-4 flex h-20 w-20 items-center justify-center rounded-3xl border border-brand-gold/30 bg-brand-gold/10 text-4xl text-brand-light shadow-[0_0_30px_rgba(200,169,107,0.2)] animate-pulse">
-        <i class="fa-solid fa-building-columns"></i>
+        <img src="./al-radhi-logo.png" alt="شعار شركة الراضي العقارية" class="alradhi-logo" />
       </div>
       <h1 class="text-2xl font-black gold-gradient-text">الراضي العقارية</h1>
       <p class="mt-1 text-[11px] tracking-[0.2em] text-slate-400">REAL ESTATE WEB APP</p>
@@ -340,7 +397,7 @@
     <div class="mx-auto flex items-center justify-between">
       <button class="flex items-center gap-3 text-right" onclick="switchView('home')" aria-label="الرئيسية">
         <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-light">
-          <i class="fa-solid fa-building-columns text-lg"></i>
+          <img src="./al-radhi-logo.png" alt="شعار الراضي العقارية" class="alradhi-logo" />
         </span>
         <div>
           <strong class="block text-base gold-gradient-text leading-tight">الراضي العقارية</strong>
@@ -406,14 +463,19 @@
         <div class="absolute inset-0 -z-10 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/75 to-transparent"></div>
         
         <div class="mx-auto w-full max-w-7xl">
-          <div class="max-w-2xl">
-            <span class="chip inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-bold mb-4">
+          <div class="max-w-3xl">
+            <div class="relative mb-7 flex justify-start">
+              <div class="hero-logo-wrap relative flex items-center justify-center">
+                <img src="./al-radhi-logo.png" alt="شعار شركة الراضي العقارية" class="alradhi-logo" loading="eager" decoding="async" fetchpriority="high" />
+              </div>
+            </div>
+            <span class="chip hero-platform-chip inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 text-xs font-bold mb-4">
               <!-- 1 — Developed Premium Pulse Dot -->
-              <span class="premium-pulse-dot"></span>المنصة العقارية الأكثر تطوراً
+              <span class="premium-pulse-dot" aria-hidden="true"></span>المنصة العقارية الأكثر تطوراً
             </span>
             <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight text-[var(--text-primary)]">
               اكتشف العقار الذي<br />
-              <span class="gold-gradient-text">يناسب رؤيتك المستقبليّة</span>
+              <span class="gold-gradient-text hero-gold-title">يناسب رؤيتك المستقبلية</span>
             </h1>
             <p class="mt-4 text-sm sm:text-base leading-relaxed text-[var(--text-secondary)]">
               مشاريع عقارية مختارة بعناية، من مرحلة الفكرة وحتى التسليم، مع تجربة رقمية تجعل الوصول إلى العقار المناسب أسهل وأسرع.
