@@ -1,1 +1,1127 @@
-# Aradi
+<!doctype html>
+<html lang="ar" dir="rtl" class="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+<meta name="description" content="منصة شركة الراضي العقارية للبحث عن العقارات والمشاريع والخدمات العقارية الفاخرة." />
+<meta name="theme-color" content="#070E17" />
+<meta property="og:title" content="شركة الراضي العقارية | منصة عقارية متكاملة" />
+<meta property="og:description" content="عقارات ومشاريع استثمارية صُممت لرؤية أبعد." />
+<meta property="og:image" content="al-radhi-logo.png" />
+<title>شركة الراضي العقارية | AL-RADHI REAL ESTATE</title>
+​<!-- PWA Manifest & App Metas -->
+<link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIuinproduinqdin2Yog2KfZhNi52YLYp9ix2YrYqSIsCiAgInNob3J0X25hbWUiOiIg2KfZhNix2KfYt9mKICIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAiZGlzcGxheSI6ICJzdGFuZGFsb25lIiwKICAiYmFja2dyb3VuZF9jb2xvciI6ICIjMDcwRTE3IiwKICAidGhlbWVfY29sb3IiOiAiIzMDNzA2MTciCgp9" />
+<link rel="icon" type="image/png" href="al-radhi-logo.png" />
+​<link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)" />
+<link rel="preconnect" href="[https://fonts.gstatic.com](https://fonts.gstatic.com)" crossorigin />
+<link href="[https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap](https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap)" rel="stylesheet" />
+<link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css)" />
+​<script>
+(function(){
+const saved = localStorage.getItem('alradhi-theme') || 'dark';
+document.documentElement.dataset.theme = saved;
+document.documentElement.classList.toggle('dark', saved === 'dark');
+})();
+</script>
+<script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+<script>
+tailwind.config = {
+darkMode: 'class',
+theme: {
+extend: {
+colors: {
+brand: {
+gold: '#C8A96B',
+goldLight: '#E0C486',
+goldDark: '#8A6A2E',
+navy: '#070E17',
+navyCard: '#0D1726',
+surface: '#0B1320'
+}
+},
+fontFamily: { sans: ['Cairo', 'sans-serif'] }
+}
+}
+};
+</script>
+​<style>
+:root {
+--gold: #C8A96B;
+--gold-light: #E0C486;
+--navy: #070E17;
+--bg-primary: #070E17;
+--bg-secondary: #0D1624;
+--card-bg: rgba(13, 23, 38, 0.7);
+--text-primary: #F8FAFC;
+--text-secondary: #94A3B8;
+--border-color: rgba(200, 169, 107, 0.15);
+--glass-surface: rgba(13, 23, 38, 0.75);
+--nav-bg: rgba(7, 14, 23, 0.85);
+--shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+--glow: rgba(200, 169, 107, 0.15);
+}
+​[data-theme="light"] {
+--bg-primary: #F1F5F9;
+--bg-secondary: #FFFFFF;
+--card-bg: rgba(255, 255, 255, 0.85);
+--text-primary: #0F172A;
+--text-secondary: #475569;
+--border-color: rgba(200, 169, 107, 0.25);
+--glass-surface: rgba(255, 255, 255, 0.82);
+--nav-bg: rgba(241, 245, 249, 0.9);
+--shadow: 0 16px 40px rgba(15, 23, 42, 0.08);
+--glow: rgba(200, 169, 107, 0.1);
+}
+​* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html { scroll-behavior: smooth; height: 100%; }
+body {
+margin: 0;
+background: var(--bg-primary);
+color: var(--text-primary);
+font-family: 'Cairo', sans-serif;
+overflow-x: hidden;
+transition: background-color 0.4s ease, color 0.4s ease;
+padding-bottom: 95px;
+}
+​@media (min-width: 1024px) {
+body { padding-bottom: 0; }
+}
+​/* Custom Desktop Cursor Glow */
+@media (min-width: 1024px) {
+#cursor-glow {
+position: fixed;
+width: 400px;
+height: 400px;
+border-radius: 50%;
+background: radial-gradient(circle, rgba(200, 169, 107, 0.07) 0%, rgba(0,0,0,0) 70%);
+pointer-events: none;
+transform: translate(-50%, -50%);
+z-index: 9999;
+transition: opacity 0.3s ease;
+}
+}
+​/* Glassmorphism System */
+.glass-panel {
+background: var(--glass-surface);
+backdrop-filter: blur(20px);
+-webkit-backdrop-filter: blur(20px);
+border: 1px solid var(--border-color);
+box-shadow: var(--shadow);
+}
+​.app-card {
+background: var(--card-bg);
+backdrop-filter: blur(16px);
+-webkit-backdrop-filter: blur(16px);
+border: 1px solid var(--border-color);
+border-radius: 1.5rem;
+transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+will-change: transform;
+position: relative;
+overflow: hidden;
+}
+​.app-card:hover {
+transform: translateY(-6px) scale(1.01);
+border-color: rgba(200, 169, 107, 0.45);
+box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), 0 0 20px var(--glow);
+}
+​.gold-gradient-text {
+background: linear-gradient(135deg, #FFF0D0 0%, #E0C486 30%, #C8A96B 70%, #9E7D3B 100%);
+-webkit-background-clip: text;
+background-clip: text;
+color: transparent;
+}
+​.gold-button {
+position: relative;
+background: linear-gradient(135deg, #C8A96B 0%, #A68648 100%);
+color: #070E17;
+font-weight: 800;
+overflow: hidden;
+box-shadow: 0 8px 25px rgba(200, 169, 107, 0.25);
+transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+.gold-button::after {
+content: '';
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: linear-gradient(60deg, transparent, rgba(255,255,255,0.3), transparent);
+transform: rotate(30deg) translateY(-100%);
+transition: transform 0.6s ease;
+}
+.gold-button:hover::after {
+transform: rotate(30deg) translateY(100%);
+}
+.gold-button:active { transform: scale(0.97); }
+.gold-button:hover { filter: brightness(1.1); box-shadow: 0 12px 30px rgba(200, 169, 107, 0.4); }
+​.input-ui, .select-ui, .textarea-ui {
+width: 100%;
+border: 1px solid var(--border-color);
+background: var(--bg-secondary);
+border-radius: 1rem;
+padding: 0.85rem 1.15rem;
+color: var(--text-primary);
+font-family: inherit;
+font-size: 0.875rem;
+outline: none;
+transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.input-ui:focus, .select-ui:focus, .textarea-ui:focus {
+border-color: var(--gold);
+box-shadow: 0 0 0 4px rgba(200, 169, 107, 0.15);
+}
+​.chip {
+border: 1px solid rgba(200, 169, 107, 0.3);
+background: rgba(200, 169, 107, 0.1);
+color: var(--gold-light);
+backdrop-filter: blur(8px);
+}
+​/* Floating Dock Bottom Navigation */
+.bottom-nav {
+position: fixed;
+bottom: 1.25rem;
+left: 50%;
+transform: translateX(-50%);
+width: calc(100% - 2rem);
+max-width: 480px;
+z-index: 90;
+background: var(--nav-bg);
+backdrop-filter: blur(25px);
+-webkit-backdrop-filter: blur(25px);
+border: 1px solid var(--border-color);
+border-radius: 2rem;
+box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255,255,255,0.1);
+transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease;
+padding: 0.35rem 0.5rem;
+}
+​.bottom-nav.nav-hidden {
+transform: translate(-50%, 140%);
+opacity: 0;
+pointer-events: none;
+}
+​.nav-item {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+padding: 0.5rem 0;
+color: var(--text-secondary);
+font-size: 0.68rem;
+font-weight: 700;
+transition: color 0.3s ease, transform 0.2s ease;
+position: relative;
+border-radius: 1.2rem;
+}
+​.nav-item.active {
+color: var(--gold-light);
+}
+​.nav-item.active::before {
+content: '';
+position: absolute;
+inset: 2px;
+background: rgba(200, 169, 107, 0.12);
+border-radius: 1rem;
+border: 1px solid rgba(200, 169, 107, 0.25);
+z-index: -1;
+}
+​.nav-item.active i {
+transform: translateY(-2px) scale(1.15);
+color: var(--gold);
+}
+​.nav-item i {
+font-size: 1.25rem;
+margin-bottom: 3px;
+transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), color 0.3s ease;
+}
+​/* Floating Header Desktop */
+.desktop-header {
+position: fixed;
+top: 1.25rem;
+left: 50%;
+transform: translateX(-50%);
+width: calc(100% - 3rem);
+max-width: 1280px;
+z-index: 80;
+border-radius: 1.75rem;
+transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, background 0.3s ease;
+}
+.desktop-header.header-hidden {
+transform: translate(-50%, -140%);
+opacity: 0;
+}
+​/* Cinematic Ken Burns Effect */
+@keyframes kenBurns {
+0% { transform: scale(1) translate(0, 0); }
+50% { transform: scale(1.08) translate(-1%, -1%); }
+100% { transform: scale(1) translate(0, 0); }
+}
+.ken-burns {
+animation: kenBurns 25s infinite alternate cubic-bezier(0.25, 1, 0.5, 1);
+}
+​/* Cinematic View Section Animation */
+.view-section {
+will-change: opacity, transform, filter;
+animation: viewTransition 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+​@keyframes viewTransition {
+from { opacity: 0; transform: translateY(18px) scale(0.99); filter: blur(4px); }
+to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+​/* Scroll progress bar */
+#scroll-progress {
+position: fixed;
+top: 0;
+left: 0;
+height: 3px;
+background: linear-gradient(90deg, #C8A96B, #E0C486, #C8A96B);
+z-index: 100;
+width: 0%;
+transition: width 0.1s linear;
+box-shadow: 0 0 10px rgba(200, 169, 107, 0.5);
+}
+​/* Scroll Reveal Effect Classes */
+.reveal-on-scroll {
+opacity: 0;
+transform: translateY(30px);
+transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-on-scroll.revealed {
+opacity: 1;
+transform: translateY(0);
+}
+​/* Modal Sheet Animations */
+.app-modal {
+animation: modalSlide 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+@keyframes modalSlide {
+from { opacity: 0; transform: translateY(60px) scale(0.97); }
+to { opacity: 1; transform: translateY(0) scale(1); }
+}
+​/* Skeleton Loading Overlay */
+.skeleton-loader {
+background: linear-gradient(90deg, var(--bg-secondary) 25%, rgba(200,169,107,0.1) 50%, var(--bg-secondary) 75%);
+background-size: 200% 100%;
+animation: skeletonLoading 1.5s infinite;
+}
+@keyframes skeletonLoading {
+0% { background-position: 200% 0; }
+100% { background-position: -200% 0; }
+}
+​@media (prefers-reduced-motion: reduce) {
+*, *::before, *::after {
+animation-duration: 0.01ms !important;
+transition-duration: 0.01ms !important;
+scroll-behavior: auto !important;
+}
+.ken-burns { animation: none !important; }
+}
+​::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: rgba(200, 169, 107, 0.3); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+</style>
+</head>
+​<body class="selection:bg-brand-gold selection:text-black">
+<div id="scroll-progress"></div>
+<div id="cursor-glow" class="hidden lg:block"></div>
+​<!-- 2. Splash Screen سينمائي للشعار -->
+<div id="intro-screen" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-[#070E17] transition-opacity duration-700 ease-out">
+<div class="relative flex flex-col items-center text-center px-4">
+<!-- Glow ambient light behind logo -->
+<div class="absolute h-48 w-48 rounded-full bg-brand-gold/20 blur-3xl animate-pulse"></div>
+​<!-- Official Logo Usage -->
+<div class="relative z-10 mb-6 transition-transform duration-1000 ease-out scale-95" id="splash-logo-container">
+<img id="splash-logo-img" class="h-24 sm:h-28 w-auto object-contain drop-shadow-[0_0_25px_rgba(200,169,107,0.3)]" alt="شركة الراضي العقارية" />
+</div>
+​<h1 class="relative z-10 text-2xl sm:text-3xl font-black gold-gradient-text tracking-wide">الراضي العقارية</h1>
+<p class="relative z-10 mt-2 text-xs sm:text-sm font-semibold tracking-[0.25em] text-slate-300 opacity-90">نصنع قيمة تتجاوز العقار</p>
+</div>
+</div>
+​<!-- 11. Desktop Navigation (Floating Glass Navigation) -->
+<header id="site-toolbar" class="desktop-header glass-panel hidden lg:block px-8 py-3.5">
+<div class="mx-auto flex items-center justify-between">
+<button class="flex items-center gap-3 text-right group" onclick="switchView('home')" aria-label="الرئيسية">
+<img id="header-logo-img" class="h-10 w-auto object-contain transition-transform duration-300 group-hover:scale-105 drop-shadow-[0_0_10px_rgba(200,169,107,0.2)]" alt="الراضي العقارية" />
+<div class="border-r border-brand-gold/30 pr-3">
+<strong class="block text-base font-black gold-gradient-text leading-tight">الراضي العقارية</strong>
+<small class="block text-[9px] tracking-widest text-slate-400 uppercase">Premium Real Estate</small>
+</div>
+</button>
+​<nav class="flex items-center gap-8 text-sm font-bold">
+<button class="nav-link-dt active transition hover:text-brand-goldLight relative py-1" data-view="home" onclick="switchView('home')">الرئيسية</button>
+<button class="nav-link-dt transition hover:text-brand-goldLight relative py-1" data-view="projects" onclick="switchView('projects')">المشاريع</button>
+<button class="nav-link-dt transition hover:text-brand-goldLight relative py-1" data-view="properties" onclick="switchView('properties')">العقارات</button>
+<button class="nav-link-dt transition hover:text-brand-goldLight relative py-1" data-view="favorites" onclick="switchView('favorites')">المفضلة</button>
+<button class="nav-link-dt transition hover:text-brand-goldLight relative py-1" data-view="services" onclick="switchView('services')">الخدمات</button>
+<button class="nav-link-dt transition hover:text-brand-goldLight relative py-1" data-view="contact" onclick="switchView('contact')">تواصل معنا</button>
+</nav>
+​<div class="flex items-center gap-3">
+<button class="gold-button rounded-xl px-5 py-2.5 text-xs font-black transition" onclick="openModal('appointment')">
+<i class="fa-regular fa-calendar-check ml-2"></i>استشارة مخصصة
+</button>
+<button id="theme-toggle" class="flex h-10 w-10 items-center justify-center rounded-xl border border-brand-gold/30 text-brand-goldLight transition hover:bg-brand-gold/10" onclick="toggleTheme()" aria-label="الوضع الداكن">
+<i id="theme-icon" class="fa-solid fa-moon"></i>
+</button>
+</div>
+</div>
+</header>
+​<!-- 10. Bottom Navigation Bar (Floating Glass Dock for Mobile) -->
+<nav id="bottom-nav" class="bottom-nav flex items-center justify-around lg:hidden">
+<button class="nav-item active flex-1" data-view="home" onclick="switchView('home')">
+<i class="fa-solid fa-house"></i>
+<span>الرئيسية</span>
+</button>
+<button class="nav-item flex-1" data-view="projects" onclick="switchView('projects')">
+<i class="fa-solid fa-city"></i>
+<span>المشاريع</span>
+</button>
+<button class="nav-item flex-1" data-view="properties" onclick="switchView('properties')">
+<i class="fa-solid fa-building-user"></i>
+<span>العقارات</span>
+</button>
+<button class="nav-item flex-1 relative" data-view="favorites" onclick="switchView('favorites')">
+<i class="fa-solid fa-heart"></i>
+<span>المفضلة</span>
+<span id="fav-badge" class="hidden absolute top-1 right-1/4 h-2 w-2 rounded-full bg-red-500 shadow-[0_0_8px_rgba(239,68,68,0.8)]"></span>
+</button>
+<button class="nav-item flex-1" data-view="account" onclick="switchView('account')">
+<i class="fa-solid fa-user"></i>
+<span>الحساب</span>
+</button>
+</nav>
+​<!-- Main Views Container -->
+<main class="min-h-screen pt-2 lg:pt-28">
+​<!-- الصفحة الرئيسية (Homepage) -->
+<section id="view-home" class="view-section">
+​<!-- 4 & 5 & 6 & 7. Hero Section جديد بالكامل وسينمائي -->
+<section class="relative isolate flex min-h-[85vh] lg:min-h-[88vh] items-center justify-center overflow-hidden px-4 py-16 lg:px-8">
+<!-- Ken Burns Background Image -->
+<div class="absolute inset-0 -z-20 overflow-hidden">
+<img class="ken-burns h-full w-full object-cover opacity-40 dark:opacity-50 filter brightness-90 contrast-110" src="[https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=2000&q=85](https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=2000&q=85)" alt="الراضي العقارية - عقارات فاخرة" loading="eager" />
+</div>
+​<!-- Cinematic Light Beams & Gradient Overlays -->
+<div class="absolute inset-0 -z-10 bg-gradient-to-t from-[var(--bg-primary)] via-[var(--bg-primary)]/75 to-transparent"></div>
+<div class="absolute inset-0 -z-10 bg-radial-at-c from-transparent via-[var(--bg-primary)]/40 to-[var(--bg-primary)]"></div>
+<div class="absolute -top-40 -left-40 h-96 w-96 rounded-full bg-brand-gold/15 blur-[120px] pointer-events-none"></div>
+​<div class="mx-auto w-full max-w-7xl text-center lg:text-right">
+<div class="max-w-3xl">
+<!-- Staggered Content Animation -->
+<div class="inline-flex items-center gap-2 rounded-full chip px-4 py-1.5 text-xs font-bold mb-6 backdrop-blur-md">
+<span class="h-2 w-2 animate-ping rounded-full bg-brand-gold"></span>
+<span class="gold-gradient-text font-black">المنصة الرقمية العقارية الفاخرة</span>
+</div>
+​<h1 class="text-4xl sm:text-6xl lg:text-7xl font-black leading-none tracking-tight text-[var(--text-primary)]">
+اكتشف مكانك القادم
+</h1>
+​<p class="mt-5 text-base sm:text-xl font-medium leading-relaxed text-[var(--text-secondary)]">
+عقارات ومشاريع استثمارية صُممت لرؤية أبعد.
+</p>
+​<div class="mt-8 flex flex-wrap items-center justify-center lg:justify-start gap-4">
+<button class="gold-button magnetic-element rounded-2xl px-8 py-4 text-sm font-black transition" onclick="switchView('properties')">
+استكشف العقارات <i class="fa-solid fa-arrow-left mr-2"></i>
+</button>
+<button class="glass-panel rounded-2xl px-8 py-4 text-sm font-bold text-[var(--text-primary)] transition hover:bg-brand-gold/15 hover:border-brand-gold/40" onclick="switchView('projects')">
+<i class="fa-solid fa-compass ml-2 text-brand-goldLight"></i>اكتشف مشاريعنا
+</button>
+</div>
+</div>
+​<!-- 7. إحصائيات Premium دمجية داخل Hero -->
+<div id="hero-stats" class="mt-16 grid grid-cols-2 gap-4 sm:grid-cols-4 max-w-4xl border-t border-[var(--border-color)] pt-8"></div>
+</div>
+</section>
+​<!-- 17. Smart Property Search Floating Panel -->
+<section class="px-4 lg:px-8 -mt-12 relative z-20 reveal-on-scroll">
+<form id="quick-search" class="glass-panel mx-auto max-w-7xl rounded-3xl p-5 shadow-2xl border border-brand-gold/30" onsubmit="event.preventDefault();quickSearch()">
+<div class="mb-3 flex items-center justify-between px-1">
+<span class="text-xs font-black gold-gradient-text flex items-center gap-2">
+<i class="fa-solid fa-sliders text-brand-gold"></i>البحث العقاري الذكي
+</span>
+<span class="text-[10px] text-[var(--text-secondary)] font-semibold">تصفية فائقة السرعة</span>
+</div>
+<div class="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-7">
+<select id="quick-purpose" class="select-ui"><option value="">كل العمليات</option><option>للبيع</option><option>للإيجار</option></select>
+<select id="quick-type" class="select-ui"><option value="">نوع العقار</option><option>شقة</option><option>فيلا</option><option>مكتب</option><option>محل</option><option>أرض</option></select>
+<select id="quick-city" class="select-ui"><option value="">المدينة</option><option>دمشق</option><option>بيروت</option><option>حلب</option><option>اللاذقية</option></select>
+<select id="quick-price" class="select-ui"><option value="">السعر الأقصى</option><option value="200000">حتى $200,000</option><option value="400000">حتى $400,000</option><option value="9999999">الكل</option></select>
+<select id="quick-rooms" class="select-ui"><option value="">الغرف</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select>
+<input id="quick-code" class="input-ui col-span-2 sm:col-span-1" placeholder="رقم العقار أو المنطقة" />
+<button class="gold-button col-span-2 sm:col-span-1 rounded-xl py-3 text-xs font-black shadow-lg" type="submit">
+<i class="fa-solid fa-magnifying-glass ml-1.5"></i>بحث الآن
+</button>
+</div>
+</form>
+</section>
+​<!-- 13. Featured Property Cards Section -->
+<section class="mx-auto max-w-7xl px-4 py-16 lg:px-8 reveal-on-scroll">
+<div class="mb-8 flex items-end justify-between border-b border-[var(--border-color)] pb-4">
+<div>
+<span class="text-[10px] font-black tracking-widest gold-gradient-text uppercase">FEATURED REAL ESTATE</span>
+<h2 class="text-2xl sm:text-3xl font-black mt-1">عقارات نخبويّة مختارة</h2>
+</div>
+<button class="text-xs font-bold text-brand-goldLight hover:underline flex items-center gap-1.5" onclick="switchView('properties')">
+عرض كافة العقارات <i class="fa-solid fa-arrow-left"></i>
+</button>
+</div>
+<div id="featured-properties" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+</section>
+​<!-- 18. Interactive Property Categories -->
+<section class="border-y border-[var(--border-color)] bg-[var(--bg-secondary)] px-4 py-14 lg:px-8">
+<div class="mx-auto max-w-7xl">
+<div class="mb-8 text-center">
+<span class="text-[10px] font-black tracking-widest gold-gradient-text uppercase">EXPLORE CATEGORIES</span>
+<h2 class="text-2xl font-black mt-1">التصنيفات العقارية</h2>
+</div>
+<div id="property-types" class="grid grid-cols-2 gap-3 sm:grid-cols-4 lg:grid-cols-8"></div>
+</div>
+</section>
+​<!-- 15 & 16. Projects as Video Stories / Full Width Cards -->
+<section class="mx-auto max-w-7xl px-4 py-16 lg:px-8 reveal-on-scroll">
+<div class="mb-8 text-center">
+<span class="text-[10px] font-black tracking-widest gold-gradient-text uppercase">INVESTMENT PORTFOLIO</span>
+<h2 class="text-2xl sm:text-3xl font-black mt-1">المشاريع الاستثمارية البارزة</h2>
+<p class="text-xs text-[var(--text-secondary)] mt-1">قصص نجاح معمارية برؤية مستقبلية</p>
+</div>
+<div id="home-projects" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+</section>
+​<!-- 19. Storytelling: Why Al-Radhi -->
+<section class="bg-[var(--bg-secondary)] border-y border-[var(--border-color)] px-4 py-16 lg:px-8 reveal-on-scroll">
+<div class="mx-auto max-w-7xl grid gap-12 lg:grid-cols-2 items-center">
+<div>
+<span class="text-[10px] font-black tracking-widest gold-gradient-text uppercase">THE AL-RADHI EXPERIENCE</span>
+<h2 class="text-3xl lg:text-4xl font-black mt-2 leading-tight">لماذا تختار شركة الراضي العقارية؟</h2>
+<p class="mt-4 text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
+نحن لا نكتفي بتقديم عقارات، بل نبتكر تجارب سكنية واستثمارية تُصمم بدقة لتجاوز توقعاتك. نهجنا يجمع بين الشفافية الكاملة، الخبرة العميقة، والتقنية الرقمية الحديثة.
+</p>
+<button class="mt-6 rounded-2xl border border-brand-gold/40 px-6 py-3 text-xs font-bold text-brand-goldLight hover:bg-brand-gold/15 transition" onclick="switchView('about')">
+تعرف على مسيرتنا <i class="fa-solid fa-arrow-left mr-2"></i>
+</button>
+</div>
+<div id="why-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-4"></div>
+</div>
+</section>
+​<!-- 20. About Al-Radhi Preview Section -->
+<section class="mx-auto max-w-7xl px-4 py-16 lg:px-8 reveal-on-scroll">
+<div class="glass-panel rounded-3xl p-8 lg:p-12 border border-brand-gold/25 relative overflow-hidden">
+<div class="absolute -right-20 -bottom-20 h-80 w-80 rounded-full bg-brand-gold/10 blur-3xl pointer-events-none"></div>
+<div class="grid gap-8 lg:grid-cols-2 items-center relative z-10">
+<div>
+<span class="text-[10px] font-black tracking-widest gold-gradient-text uppercase">ABOUT AL-RADHI</span>
+<h2 class="text-3xl font-black mt-2">رائدة التطوير والخدمات العقارية</h2>
+<p class="mt-4 text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">
+تأسست شركة الراضي العقارية لتكون العنوان الأبرز للموثوقية والابتكار المعماري. نحن نلتزم بتحويل الفرص العقارية إلى أصول ذات قيمة متزايدة، مع تقديم الدعم الكامل من أول استشارة حتى استلام المفتاح.
+</p>
+<div id="about-preview-stats" class="grid grid-cols-2 gap-4 mt-6"></div>
+</div>
+<div class="relative rounded-2xl overflow-hidden shadow-2xl border border-brand-gold/20">
+<img class="h-80 w-full object-cover transition-transform duration-700 hover:scale-105" src="[https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80](https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80)" alt="عن شركة الراضي" />
+<div class="absolute inset-0 bg-gradient-to-t from-[#070E17]/80 via-transparent to-transparent"></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+​<!-- 15 & 16. قسم المشاريع العقارية (Featured Stories View) -->
+<section id="view-projects" class="view-section hidden px-4 py-8 lg:px-8">
+<div class="mx-auto max-w-7xl">
+<div class="mb-8 text-center">
+<span class="text-[10px] font-black tracking-widest gold-gradient-text uppercase">LUXURY PORTFOLIO</span>
+<h1 class="text-3xl sm:text-4xl font-black">المشاريع الاستثمارية المعمارية</h1>
+<p class="mt-2 text-xs sm:text-sm text-[var(--text-secondary)]">تصفح مشاريعنا الحصرية التي تعيد تعريف معايير البناء الحديث</p>
+</div>
+<div class="mb-8 flex flex-wrap justify-center gap-2.5" id="project-tabs"></div>
+<div id="projects-grid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+</div>
+</section>
+​<!-- 13. قسم العقارات والفلترة الفائقة (Properties View) -->
+<section id="view-properties" class="view-section hidden px-4 py-8 lg:px-8">
+<div class="mx-auto max-w-7xl">
+<div class="mb-6 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+<div>
+<h1 class="text-3xl font-black">المحفظة العقارية</h1>
+<p class="text-xs text-[var(--text-secondary)] mt-1">استعرض أفضل الفرص السكنية والتجارية المتاحة</p>
+</div>
+<div class="text-xs text-[var(--text-secondary)] font-bold chip px-4 py-2 rounded-xl self-start" id="property-count"></div>
+</div>
+​<!-- Advanced Filters -->
+<div class="glass-panel mb-8 rounded-3xl p-5 border border-brand-gold/30 shadow-xl">
+<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-7">
+<select id="filter-purpose" class="select-ui" onchange="applyFilters()"><option value="">كل العمليات</option><option>للبيع</option><option>للإيجار</option></select>
+<select id="filter-type" class="select-ui" onchange="applyFilters()"><option value="">كل الأنواع</option><option>شقة</option><option>فيلا</option><option>مكتب</option><option>محل</option><option>أرض</option></select>
+<select id="filter-city" class="select-ui" onchange="applyFilters()"><option value="">كل المدن</option><option>دمشق</option><option>بيروت</option><option>حلب</option><option>اللاذقية</option></select>
+<select id="filter-price" class="select-ui" onchange="applyFilters()"><option value="">السعر الأقصى</option><option value="200000">حتى $200,000</option><option value="400000">حتى $400,000</option><option value="9999999">الكل</option></select>
+<select id="filter-size" class="select-ui" onchange="applyFilters()"><option value="">المساحة</option><option value="100">100+ م²</option><option value="200">200+ م²</option><option value="400">400+ م²</option></select>
+<select id="filter-rooms" class="select-ui" onchange="applyFilters()"><option value="">الغرف</option><option value="1">1+</option><option value="2">2+</option><option value="3">3+</option><option value="4">4+</option></select>
+<input id="filter-text" class="input-ui" placeholder="بحث بالاسم أو المنطقة..." oninput="applyFilters()" />
+</div>
+</div>
+​<div id="properties-grid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+</div>
+</section>
+​<!-- صفحة المفضلة (Favorites View) -->
+<section id="view-favorites" class="view-section hidden px-4 py-8 lg:px-8">
+<div class="mx-auto max-w-7xl">
+<div class="mb-8">
+<h1 class="text-3xl font-black">العقارات المحفوظة</h1>
+<p class="text-xs text-[var(--text-secondary)] mt-1">قائمة عقاراتك ومشاريعك المفضلة للمقارنة والمتابعة</p>
+</div>
+<div id="favorites-grid" class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+</div>
+</section>
+​<!-- صفحة الحساب (Account & Web App Settings View) -->
+<section id="view-account" class="view-section hidden px-4 py-8 lg:px-8">
+<div class="mx-auto max-w-2xl">
+<div class="app-card p-8 text-center mb-6 border border-brand-gold/30">
+<div class="mx-auto mb-4 flex h-24 w-24 items-center justify-center rounded-3xl bg-brand-gold/15 text-4xl text-brand-goldLight shadow-inner border border-brand-gold/30">
+<i class="fa-solid fa-user-gear"></i>
+</div>
+<h2 class="text-2xl font-black">إعدادات المنصة الرقمية</h2>
+<p class="text-xs text-[var(--text-secondary)] mt-1">تخصيص تجربتك في تطبيق الراضي العقارية</p>
+</div>
+​<div class="space-y-4">
+<div class="app-card p-5 flex items-center justify-between">
+<div class="flex items-center gap-4">
+<span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-goldLight"><i class="fa-solid fa-moon text-lg"></i></span>
+<div>
+<strong class="block text-sm font-bold">الظهر والنمط البصري (Theme)</strong>
+<small class="text-[11px] text-[var(--text-secondary)]">التبديل بين الوضع الداكن والوضع الفاتح</small>
+</div>
+</div>
+<button class="gold-button rounded-xl px-5 py-2 text-xs font-black" onclick="toggleTheme()">تغيير</button>
+</div>
+​<button class="app-card w-full p-5 flex items-center justify-between text-right" onclick="switchView('favorites')">
+<div class="flex items-center gap-4">
+<span class="flex h-10 w-10 items-center justify-center rounded-xl bg-red-500/15 text-red-500"><i class="fa-solid fa-heart text-lg"></i></span>
+<div>
+<strong class="block text-sm font-bold">المفضلة والمحفوظات</strong>
+<small class="text-[11px] text-[var(--text-secondary)]">إدارة العقارات التي حفظتها</small>
+</div>
+</div>
+<i class="fa-solid fa-chevron-left text-xs text-[var(--text-secondary)]"></i>
+</button>
+​<button class="app-card w-full p-5 flex items-center justify-between text-right" onclick="switchView('branches')">
+<div class="flex items-center gap-4">
+<span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-goldLight"><i class="fa-solid fa-location-dot text-lg"></i></span>
+<div>
+<strong class="block text-sm font-bold">فروع شركة الراضي</strong>
+<small class="text-[11px] text-[var(--text-secondary)]">عناوين المقرات وساعات العمل</small>
+</div>
+</div>
+<i class="fa-solid fa-chevron-left text-xs text-[var(--text-secondary)]"></i>
+</button>
+​<button class="app-card w-full p-5 flex items-center justify-between text-right" onclick="switchView('services')">
+<div class="flex items-center gap-4">
+<span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-gold/15 text-brand-goldLight"><i class="fa-solid fa-concierge-bell text-lg"></i></span>
+<div>
+<strong class="block text-sm font-bold">الخدمات العقارية المخصصة</strong>
+<small class="text-[11px] text-[var(--text-secondary)]">استشارات البيع الشراء والتثمين</small>
+</div>
+</div>
+<i class="fa-solid fa-chevron-left text-xs text-[var(--text-secondary)]"></i>
+</button>
+</div>
+</div>
+</section>
+​<!-- 16. التواصل الاستشاري (Contact View) -->
+<section id="view-contact" class="view-section hidden px-4 py-8 lg:px-8">
+<div class="mx-auto max-w-7xl">
+<div class="grid gap-8 lg:grid-cols-2">
+<div class="app-card p-8 border border-brand-gold/30 flex flex-col justify-between">
+<div>
+<span class="text-[10px] font-black tracking-widest gold-gradient-text uppercase">DIRECT CONTACT</span>
+<h1 class="text-3xl font-black mt-2">تحدث مع مستشار عقاري</h1>
+<p class="mt-3 text-xs sm:text-sm text-[var(--text-secondary)] leading-relaxed">فريق المستشارين في شركة الراضي جاهز لمرافقتك في اختيار الفرصة الاستثمارية أو السكنية المثالية.</p>
+​<div class="mt-8 space-y-5 text-sm">
+<a class="flex items-center gap-4 group" href="tel:+963999000000">
+<span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-gold/15 text-brand-goldLight group-hover:bg-brand-gold group-hover:text-brand-navy transition"><i class="fa-solid fa-phone"></i></span>
+<div>
+<b class="block text-xs font-bold text-[var(--text-secondary)]">المستشار المباشر</b>
+<span class="text-sm font-black" dir="ltr">+963 999 000 000</span>
+</div>
+</a>
+<a class="flex items-center gap-4 group" href="mailto:hello@alradhi-demo.com">
+<span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-brand-gold/15 text-brand-goldLight group-hover:bg-brand-gold group-hover:text-brand-navy transition"><i class="fa-solid fa-envelope"></i></span>
+<div>
+<b class="block text-xs font-bold text-[var(--text-secondary)]">البريد الإلكتروني الرسمي</b>
+<span class="text-sm font-black">hello@alradhi-demo.com</span>
+</div>
+</a>
+</div>
+</div>
+​<div class="mt-8 pt-6 border-t border-[var(--border-color)]">
+<span class="block text-xs text-[var(--text-secondary)] font-bold mb-2">تابع منصتنا</span>
+<div class="flex gap-3">
+<a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-goldLight hover:bg-brand-gold hover:text-brand-navy transition"><i class="fa-brands fa-instagram"></i></a>
+<a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-goldLight hover:bg-brand-gold hover:text-brand-navy transition"><i class="fa-brands fa-linkedin-in"></i></a>
+<a href="#" class="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-gold/10 text-brand-goldLight hover:bg-brand-gold hover:text-brand-navy transition"><i class="fa-brands fa-facebook-f"></i></a>
+</div>
+</div>
+</div>
+​<form class="app-card p-8 border border-brand-gold/20" onsubmit="submitDemoForm(event,'تم إرسال طلبك بنجاح. سيتواصل معك مستشار الراضي العقارية قريباً.')">
+<h2 class="text-xl font-black mb-6">طلب استشارة خاصة</h2>
+<div class="space-y-4">
+<input required class="input-ui" placeholder="الاسم الكامل" />
+<input required class="input-ui" type="tel" placeholder="رقم الهاتف / WhatsApp" />
+<select class="select-ui"><option>نوع الاستشارة المطلوبة</option><option>شراء عقار سكني</option><option>استثمار تجاري</option><option>تسويق عقار</option><option>استشارة معمارية</option></select>
+<textarea required class="textarea-ui" rows="4" placeholder="اكتب تفاصيل استفسارك أو العقار الذي تبحث عنه..."></textarea>
+<button class="gold-button w-full rounded-2xl py-4 text-xs font-black shadow-xl">إرسال الطلب الآن</button>
+</div>
+</form>
+</div>
+</div>
+</section>
+​<!-- 21. Services View -->
+<section id="view-services" class="view-section hidden px-4 py-8 lg:px-8">
+<div class="mx-auto max-w-7xl">
+<div class="mb-8 text-center">
+<span class="text-[10px] font-black tracking-widest gold-gradient-text uppercase">EXPERT SERVICES</span>
+<h1 class="text-3xl font-black mt-1">الخدمات العقارية الفاخرة</h1>
+<p class="text-xs text-[var(--text-secondary)] mt-1">منظومة خدمات متكاملة تغطي كافة مراحل الاستثمار والارتقاء العقاري</p>
+</div>
+<div id="services-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3"></div>
+</div>
+</section>
+​<!-- 20. Corporate Premium About View -->
+<section id="view-about" class="view-section hidden px-4 py-8 lg:px-8">
+<div class="mx-auto max-w-7xl">
+<div class="mb-8">
+<span class="text-[10px] font-black tracking-widest gold-gradient-text uppercase">ABOUT AL-RADHI REAL ESTATE</span>
+<h1 class="text-3xl font-black mt-1">شركة الراضي العقارية</h1>
+</div>
+<div class="grid gap-8 lg:grid-cols-2 items-center">
+<div class="space-y-5 text-sm text-[var(--text-secondary)] leading-relaxed">
+<p class="text-base font-semibold text-[var(--text-primary)]">شركة الراضي العقارية مؤسسة معمارية واستثمارية تُعنى بتوفير أعلى مستويات الأمان والجودة في السوق العقاري.</p>
+<p>نحن نؤمن بأهمية الدقة والتطوير المستمر، حيث نقدم لعملائنا من الأفراد والشركات محفظة متوازنة من العقارات الفاخرة والمشاريع النوعية ذات القيمة المضافة.</p>
+<div id="about-stats" class="grid grid-cols-2 gap-4 pt-4 border-t border-[var(--border-color)]"></div>
+</div>
+<div class="relative rounded-3xl overflow-hidden shadow-2xl border border-brand-gold/30">
+<img class="h-96 w-full object-cover" src="[https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80](https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80)" alt="عن الراضي العقارية" />
+</div>
+</div>
+</div>
+</section>
+​<!-- 22. Branches View -->
+<section id="view-branches" class="view-section hidden px-4 py-8 lg:px-8">
+<div class="mx-auto max-w-7xl">
+<div class="mb-8">
+<span class="text-[10px] font-black tracking-widest gold-gradient-text uppercase">OUR OFFICES</span>
+<h1 class="text-3xl font-black mt-1">الفروع والمقرات الرسمية</h1>
+</div>
+<div id="branches-grid" class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+</div>
+</section>
+</main>
+​<!-- 23. AI Real Estate Concierge Floating Widget -->
+<div id="assistant-widget" class="fixed bottom-24 left-5 z-40 lg:bottom-8 lg:left-8">
+<button onclick="toggleAssistant()" class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-brand-gold text-brand-navy shadow-2xl transition-transform duration-300 hover:scale-110 active:scale-95 group border border-brand-goldLight/50" aria-label="المساعد العقاري الذكي">
+<div class="absolute inset-0 rounded-2xl bg-brand-gold animate-ping opacity-25"></div>
+<i class="fa-solid fa-headset text-2xl relative z-10"></i>
+</button>
+​<div id="assistant-panel" class="hidden absolute bottom-16 left-0 w-80 sm:w-96 glass-panel rounded-3xl p-5 shadow-2xl border border-brand-gold/30 animate-pulse-once">
+<div class="flex items-center justify-between pb-3 mb-4 border-b border-[var(--border-color)]">
+<div class="flex items-center gap-2">
+<span class="flex h-8 w-8 items-center justify-center rounded-xl bg-brand-gold/20 text-brand-goldLight"><i class="fa-solid fa-robot text-sm"></i></span>
+<strong class="text-xs font-black gold-gradient-text">AI Real Estate Concierge</strong>
+</div>
+<button onclick="toggleAssistant()" class="text-xs text-[var(--text-secondary)] hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+</div>
+<p class="text-xs text-[var(--text-secondary)] mb-4 leading-relaxed">أهلاً بك في منصة الراضي. كيف يمكن لمساعدك العقاري الذكي خدمتك اليوم؟</p>
+<div class="space-y-2 text-xs">
+<button onclick="switchView('properties');toggleAssistant()" class="w-full text-right p-3 rounded-xl bg-[var(--bg-secondary)] hover:bg-brand-gold/15 font-bold transition flex items-center justify-between">
+<span>🏠 أريد شراء أو إيجار عقار فاخر</span>
+<i class="fa-solid fa-chevron-left text-[10px]"></i>
+</button>
+<button onclick="switchView('projects');toggleAssistant()" class="w-full text-right p-3 rounded-xl bg-[var(--bg-secondary)] hover:bg-brand-gold/15 font-bold transition flex items-center justify-between">
+<span>🏢 أبحث عن المشاريع الاستثمارية الجديدة</span>
+<i class="fa-solid fa-chevron-left text-[10px]"></i>
+</button>
+<button onclick="openModal('appointment');toggleAssistant()" class="w-full text-right p-3 rounded-xl bg-[var(--bg-secondary)] hover:bg-brand-gold/15 font-bold transition flex items-center justify-between">
+<span>📞 طلب استشارة عقارية خاصة</span>
+<i class="fa-solid fa-chevron-left text-[10px]"></i>
+</button>
+</div>
+</div>
+</div>
+​<!-- Global Toast Notification -->
+<div id="toast" class="pointer-events-none fixed bottom-28 left-1/2 z-[100] hidden w-[min(90vw,420px)] -translate-x-1/2 rounded-2xl border border-brand-gold/40 bg-[var(--nav-bg)] p-4 text-center text-xs font-bold shadow-2xl backdrop-blur-xl"></div>
+​<!-- Dynamic Modal Root Container -->
+<div id="modal-root"></div>
+​<!-- Footer Section -->
+<footer class="border-t border-[var(--border-color)] bg-[var(--bg-primary)] px-4 py-12 lg:px-8 mt-20">
+<div class="mx-auto max-w-7xl flex flex-col sm:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-3">
+<img class="footer-logo-img h-8 w-auto object-contain" alt="شركة الراضي العقارية" />
+<span class="text-xs font-bold text-[var(--text-secondary)]">© 2026 شركة الراضي العقارية. جميع الحقوق محفوظة.</span>
+</div>
+<div class="flex items-center gap-6 text-xs text-[var(--text-secondary)] font-bold">
+<button onclick="switchView('home')">الرئيسية</button>
+<button onclick="switchView('projects')">المشاريع</button>
+<button onclick="switchView('properties')">العقارات</button>
+<button onclick="switchView('contact')">تواصل معنا</button>
+</div>
+</div>
+</footer>
+​<!-- Complete Script Engine & Preserved Data Logic -->
+<script>
+/*
+1 & 32. الإعدادات المركزية للشركة مع مسار الشعار المحلي
+*/
+const COMPANY_CONFIG = {
+name: "شركة الراضي العقارية",
+logo: "al-radhi-logo.png",
+phone: "+963999000000",
+whatsapp: "963999000000",
+email: "hello@alradhi-demo.com"
+};
+​/*
+Preserved Core Data Structure & Firebase Safety Ready
+*/
+const appData = {
+settings: { company: COMPANY_CONFIG.name, whatsapp: COMPANY_CONFIG.whatsapp, demo: true },
+stats: [ ['+10','سنوات خبرة معمارية'], ['+500','عقار فاخر مسجّل'], ['+20','مشروعاً استثمارياً بارزاً'], ['+1000','عميل وثقوا برؤيتنا'] ],
+propertyTypes: [ ['شقق','fa-building'], ['فلل','fa-house-chimney'], ['أراضي','fa-mountain-sun'], ['مكاتب','fa-briefcase'], ['محلات','fa-store'], ['تجاري','fa-city'], ['سكني','fa-people-roof'], ['مشاريع','fa-compass-drafting'] ],
+properties: [
+{id:101, code:'AR-101', name:'شقة بانورامية في المزة', type:'شقة', purpose:'للبيع', city:'دمشق', area:'المزة', price:185000, priceLabel:'$185,000', size:165, rooms:3, baths:2, floor:'7', status:'متاح', image:'https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=800&q=80', description:'شقة عصرية بإضاءة طبيعية واسعة، تشطيبات هادئة ومساحة معيشة مصممة للراحة الفائقة.', features:['شرفة بانورامية','موقف خاص','حراسة 24/7']},
+{id:102, code:'AR-102', name:'فيلا حدائق الياسمين', type:'فيلا', purpose:'للبيع', city:'دمشق', area:'يعفور', price:620000, priceLabel:'$620,000', size:480, rooms:5, baths:5, floor:'أرضي + أول', status:'متاح', image:'https://images.unsplash.com/photo-1600585154526-990dced4db0d?auto=format&fit=crop&w=800&q=80', description:'فيلا مستقلة ضمن حي هادئ، بحديقة خاصة ومساحات داخلية مرنة للعائلة المتميزة.', features:['حديقة خاصة','مسبح','نظام منزل ذكي']},
+{id:103, code:'AR-103', name:'مكتب أعمال في وسط المدينة', type:'مكتب', purpose:'للإيجار', city:'بيروت', area:'وسط بيروت', price:2800, priceLabel:'$2,800 / شهرياً', size:115, rooms:2, baths:1, floor:'12', status:'متاح', image:'https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=800&q=80', description:'مكتب مؤثث بخدمات أعمال أساسية وإطلالة مدينة مناسبة للشركات النخبوية.', features:['مفروش','قاعة اجتماعات','استقبال مشترك']},
+{id:104, code:'AR-104', name:'بنتهاوس النخبة', type:'شقة', purpose:'للبيع', city:'دمشق', area:'أبو رمانة', price:410000, priceLabel:'$410,000', size:245, rooms:4, baths:3, floor:'10', status:'متاح', image:'https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?auto=format&fit=crop&w=800&q=80', description:'بنتهاوس مميز بتراس واسع، توزيع داخلي فاخر وإطلالات مفتوحة على المدينة.', features:['تراس 70 م²','مصعد خاص','غرفة خدمة']},
+{id:105, code:'AR-105', name:'أرض استثمارية جنوبية', type:'أرض', purpose:'للبيع', city:'اللاذقية', area:'مشروع الرمال', price:230000, priceLabel:'$230,000', size:950, rooms:0, baths:0, floor:'—', status:'متاح', image:'https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=800&q=80', description:'أرض ضمن منطقة تطوير واعدة، مناسبة لمشروع سكني فاخر متميز.', features:['مستندات كاملة','واجهة طريق','قابلة للتطوير']},
+{id:106, code:'AR-106', name:'محل واجهة رئيسية', type:'محل', purpose:'للإيجار', city:'حلب', area:'الجميلية', price:1450, priceLabel:'$1,450 / شهرياً', size:92, rooms:1, baths:1, floor:'أرضي', status:'متاح', image:'https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80', description:'مساحة تجارية بواجهة زجاجية ضمن شارع حيوي، جاهزة للتجهيز التجاري.', features:['واجهة 8 م','مستودع','حركة مشاة']}
+],
+projects: [
+{id:1,name:'برج الراضي الأيقوني',location:'دمشق — المركز التجاري',state:'جديد',progress:15,units:96,types:'شقق، مكاتب، بنتهاوس',image:'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1000&q=80',desc:'برج متعدد الاستخدامات برؤية معمارية معاصرة ومرافق عمل وسكن متكاملة.',payment:'خطط تقسيط مرنة حتى 48 شهراً',facilities:['ردهة فندقية','نادي صحي','مواقف ذكية']},
+{id:2,name:'مجمع الياسمين السكني',location:'يعفور — المنطقة السكنية',state:'قيد الإنشاء',progress:62,units:42,types:'فلل مستقلة، تاون هاوس',image:'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1000&q=80',desc:'مجتمع سكني منخفض الكثافة يوازن بين الخصوصية والطبيعة والخدمات اليومية.',payment:'دفعة أولى 20% والباقي اقساط',facilities:['بوابة أمنية','حدائق','نادي سكان']},
+{id:3,name:'مرسى بيروت ريزيدنس',location:'بيروت — الواجهة البحرية',state:'مكتمل',progress:100,units:58,types:'شقق بحرية، بنتهاوس',image:'https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=1000&q=80',desc:'سكن حضري بإطلالات مفتوحة ومواصفات داخلية هادئة بالقرب من خدمات المدينة.',payment:'تسليم فوري وحدات جاهزة',facilities:['إطلالة بحرية','كونسيرج','تراس مشترك']}
+],
+services: [
+['شراء العقارات الفاخرة','fa-magnifying-glass-location','نساعدك على انتقاء الخيارات الأرقى واستكمال كافة المعاملات بشفافية.'],
+['تسويق وبيع العقارات','fa-tags','نعرض عقارك ضمن حملات استراتيجية موجّهة للوصول إلى المستثمر المناسب.'],
+['الاستشارات والاستثمار','fa-chart-line','دراسات جدوى وتوجيه استثماري متكامل لضمان أعلى عائد عقاري على المدى الطويل.']
+],
+branches: [
+['دمشق — المزة','دمشق','شارع الاستثمار، مبنى 12','+963 999 000 000','السبت–الخميس، 9 ص–6 م'],
+['بيروت — وسط المدينة','بيروت','شارع الواجهة، مبنى 8','+961 70 000 000','الاثنين–الجمعة، 9 ص–6 م']
+]
+};
+​// Favorites LocalStorage Management
+let favorites = JSON.parse(localStorage.getItem('alradhi-favs') || '[]');
+​function toggleFavorite(id, e) {
+if(e) e.stopPropagation();
+const idx = favorites.indexOf(id);
+if(idx >= 0) {
+favorites.splice(idx, 1);
+showToast('تمت إزالة العقار من المفضلة');
+} else {
+favorites.push(id);
+showToast('تمت إضافة العقار للمفضلة ❤️');
+}
+localStorage.setItem('alradhi-favs', JSON.stringify(favorites));
+updateFavBadge();
+const currentView = document.querySelector('.view-section:not(.hidden)').id;
+if(currentView === 'view-favorites') renderFavorites();
+else {
+applyFilters();
+}
+}
+​function updateFavBadge() {
+const badge = document.getElementById('fav-badge');
+if(badge) badge.classList.toggle('hidden', favorites.length === 0);
+}
+​// Initialize Images with Centralized COMPANY_CONFIG Logo
+function initializeLogos() {
+const logoPath = COMPANY_CONFIG.logo;
+const splashLogo = document.getElementById('splash-logo-img');
+const headerLogo = document.getElementById('header-logo-img');
+const footerLogos = document.querySelectorAll('.footer-logo-img');
+​if(splashLogo) splashLogo.src = logoPath;
+if(headerLogo) headerLogo.src = logoPath;
+footerLogos.forEach(img => { if(img) img.src = logoPath; });
+}
+​// 13. Property Cards Redesign
+function propertyCard(p) {
+const isFav = favorites.includes(p.id);
+return `
+<article class="app-card overflow-hidden group" onclick="openProperty(${p.id})">
+<div class="relative h-60 overflow-hidden">
+<img class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" src="${p.image}" alt="${p.name}" loading="lazy" />
+<div class="absolute inset-0 bg-gradient-to-t from-[#070E17]/90 via-transparent to-black/20"></div>
+​<span class="absolute right-4 top-4 rounded-xl bg-[#070E17]/80 border border-brand-gold/30 backdrop-blur-md px-3 py-1 text-[11px] font-black text-brand-goldLight">{p.purpose}</span>
+<button onclick="toggleFavorite(${p.id}, event)" class="absolute left-4 top-4 flex h-9 w-9 items-center justify-center rounded-full bg-black/40 text-white backdrop-blur-md transition hover:scale-110 hover:bg-black/60">
+<i class="${isFav ? 'fa-solid text-red-500' : 'fa-regular'} fa-heart"></i>
+</button>
+<span class="absolute right-4 bottom-3 text-[11px] font-bold text-slate-300"><i class="fa-solid fa-hashtag text-brand-gold ml-1"></i>{p.code}</span>
+</div>
+<div class="p-5">
+<div class="flex items-center justify-between text-xs mb-1">
+<span class="font-extrabold gold-gradient-text">{p.type}</span>
+<span class="text-[var(--text-secondary)]"><i class="fa-solid fa-location-dot ml-1 text-brand-gold"></i>{p.city}، {p.area}</span>
+</div>
+<h3 class="text-lg font-black truncate mt-1">{p.name}</h3>
+<p class="mt-3 text-xl font-black text-brand-goldLight">{p.priceLabel}</p>
+<div class="mt-4 flex justify-between border-t border-[var(--border-color)] pt-3 text-xs text-[var(--text-secondary)] font-bold">
+<span><i class="fa-solid fa-ruler-combined ml-1.5 text-brand-gold"></i>{p.size} م²</span>
+<span><i class="fa-solid fa-bed ml-1.5 text-brand-gold"></i>{p.rooms || '—'} غرف</span>
+<span><i class="fa-solid fa-bath ml-1.5 text-brand-gold"></i>{p.baths || '—'} حمام</span>
+</div>
+</div>
+</article>`;
+}
+​// 15 & 16. Projects Cards
+function projectCard(p) {
+return  <article class="app-card overflow-hidden group" onclick="openProject(${p.id})"> <div class="relative h-60 overflow-hidden"> <img class="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-110" src="${p.image}" alt="${p.name}" loading="lazy" /> <div class="absolute inset-0 bg-gradient-to-t from-[#070E17]/90 via-transparent to-black/20"></div> <span class="absolute right-4 top-4 rounded-xl bg-brand-gold px-3 py-1 text-[11px] font-black text-brand-navy shadow-lg">${p.state}</span> </div> <div class="p-5"> <p class="text-xs font-bold text-brand-goldLight"><i class="fa-solid fa-location-dot ml-1"></i>${p.location}</p> <h3 class="mt-1 text-lg font-black truncate">${p.name}</h3> <p class="mt-2 text-xs text-[var(--text-secondary)] line-clamp-2 leading-relaxed">${p.desc}</p> <div class="mt-4 pt-3 border-t border-[var(--border-color)]"> <div class="flex justify-between text-xs mb-1.5 font-bold"> <span class="text-[var(--text-secondary)]">نسبة إنجاز المشروع</span> <span class="gold-gradient-text">${p.progress}%</span> </div> <div class="h-2 w-full bg-[var(--bg-secondary)] rounded-full overflow-hidden border border-brand-gold/20"> <div class="h-full bg-gradient-to-r from-brand-goldDark to-brand-goldLight transition-all duration-1000" style="width: ${p.progress}%"></div> </div> </div> </div> </article>;
+}
+​// Render Initial App Sections
+function renderAll() {
+const statsHtml = appData.stats.map(s =>  <div class="glass-panel rounded-2xl p-4 text-center border border-brand-gold/20"> <b class="block text-2xl font-black gold-gradient-text">${s[0]}</b> <span class="block text-[11px] text-[var(--text-secondary)] font-bold mt-1">${s[1]}</span> </div>).join('');
+​document.getElementById('hero-stats').innerHTML = statsHtml;
+const previewStats = document.getElementById('about-preview-stats');
+if(previewStats) previewStats.innerHTML = statsHtml;
+​document.getElementById('featured-properties').innerHTML = appData.properties.slice(0, 6).map(propertyCard).join('');
+​document.getElementById('property-types').innerHTML = appData.propertyTypes.map(([name, icon]) =>  <button class="app-card p-4 text-center transition hover:border-brand-gold/60 group" onclick="filterByType('${name}')"> <i class="fa-solid ${icon} mb-2 text-xl text-brand-goldLight transition-transform duration-300 group-hover:scale-125"></i> <span class="block text-xs font-bold truncate">${name}</span> </button>).join('');
+​document.getElementById('home-projects').innerHTML = appData.projects.map(projectCard).join('');
+​document.getElementById('why-grid').innerHTML = [
+['خبرة عقارية عميقة', 'معايير اختيار دقيقة تضمن أفضل أصول.', 'fa-medal'],
+['محفظة خيارات شاملة', 'مساحات سكنية وتجارية متكاملة.', 'fa-building-circle-check'],
+['مشاريع موثوقة بالكامل', 'متابعة مراحل التنفيذ والتسليم.', 'fa-compass-drafting'],
+['استشارات مخصصة 24/7', 'فريق متخصص يرافقك خطوة بخطوة.', 'fa-headset']
+].map(x =>  <div class="app-card p-5 border border-brand-gold/20"> <i class="fa-solid ${x[2]} text-2xl text-brand-goldLight mb-3"></i> <h3 class="text-sm font-black">${x[0]}</h3> <p class="text-xs text-[var(--text-secondary)] mt-1 leading-relaxed">${x[1]}</p> </div>).join('');
+​document.getElementById('services-grid').innerHTML = appData.services.map(s =>  <article class="app-card p-6 border border-brand-gold/20 flex flex-col justify-between"> <div> <i class="fa-solid ${s[1]} text-3xl text-brand-goldLight mb-4"></i> <h2 class="text-lg font-black">${s[0]}</h2> <p class="text-xs text-[var(--text-secondary)] mt-2 leading-relaxed">${s[2]}</p> </div> <button class="mt-6 gold-button rounded-xl px-4 py-2.5 text-xs font-bold" onclick="openModal('appointment')">اطلب الخدمة الآن</button> </article>).join('');
+​document.getElementById('about-stats').innerHTML = statsHtml;
+​document.getElementById('branches-grid').innerHTML = appData.branches.map(b =>  <article class="app-card p-5 border border-brand-gold/20"> <h3 class="font-black text-base">${b[0]}</h3> <p class="text-xs text-[var(--text-secondary)] mt-1">${b[2]}</p> <div class="mt-4 text-xs space-y-2 text-[var(--text-secondary)] font-semibold border-t border-[var(--border-color)] pt-3"> <p><i class="fa-solid fa-phone text-brand-goldLight ml-1.5"></i>${b[3]}</p> <p><i class="fa-regular fa-clock text-brand-goldLight ml-1.5"></i>${b[4]}</p> </div> </article>).join('');
+​renderProjects();
+renderProperties(appData.properties);
+updateFavBadge();
+initScrollReveal();
+}
+​function renderProperties(items) {
+const container = document.getElementById('properties-grid');
+container.innerHTML = items.length ? items.map(propertyCard).join('') :  <div class="app-card col-span-full p-12 text-center border border-brand-gold/20"> <i class="fa-solid fa-magnifying-glass mb-3 text-3xl text-brand-goldLight"></i> <p class="text-sm font-bold text-[var(--text-secondary)]">لم نجد عقارات تطابق معايير البحث الحالية</p> </div>;
+document.getElementById('property-count').textContent = عرض ${items.length} من أصل ${appData.properties.length} عقاراً;
+}
+​function renderFavorites() {
+const favProperties = appData.properties.filter(p => favorites.includes(p.id));
+const container = document.getElementById('favorites-grid');
+container.innerHTML = favProperties.length ? favProperties.map(propertyCard).join('') :  <div class="app-card col-span-full p-12 text-center border border-brand-gold/20"> <i class="fa-solid fa-heart-crack mb-3 text-3xl text-brand-goldLight"></i> <p class="text-sm font-bold text-[var(--text-secondary)]">لم تقم بإضافة أي عقارات للمفضلة بعد</p> </div>;
+}
+​function applyFilters() {
+const purpose = document.getElementById('filter-purpose').value;
+const type = document.getElementById('filter-type').value;
+const city = document.getElementById('filter-city').value;
+const price = +document.getElementById('filter-price').value || Infinity;
+const minSize = +document.getElementById('filter-size').value || 0;
+const minRooms = +document.getElementById('filter-rooms').value || 0;
+const text = document.getElementById('filter-text').value.trim().toLowerCase();
+​const filtered = appData.properties.filter(p =>
+(!purpose || p.purpose === purpose) &&
+(!type || p.type === type) &&
+(!city || p.city === city) &&
+p.price <= price &&
+p.size >= minSize &&
+p.rooms >= minRooms &&
+(!text || ${p.name} ${p.code} ${p.area}.toLowerCase().includes(text))
+);
+renderProperties(filtered);
+}
+​function filterByType(type) {
+switchView('properties');
+setTimeout(() => {
+const sel = document.getElementById('filter-type');
+if(sel) { sel.value = (type === 'تجاري' ? 'محل' : type === 'سكني' ? 'شقة' : type === 'مشاريع' ? '' : type); applyFilters(); }
+}, 50);
+}
+​function quickSearch() {
+switchView('properties');
+setTimeout(() => {
+document.getElementById('filter-purpose').value = document.getElementById('quick-purpose').value;
+document.getElementById('filter-type').value = document.getElementById('quick-type').value;
+document.getElementById('filter-city').value = document.getElementById('quick-city').value;
+document.getElementById('filter-price').value = document.getElementById('quick-price').value;
+document.getElementById('filter-rooms').value = document.getElementById('quick-rooms').value;
+document.getElementById('filter-text').value = document.getElementById('quick-code').value;
+applyFilters();
+}, 50);
+}
+​let projectState = 'الكل';
+function renderProjects() {
+const tabs = ['الكل', 'جديد', 'قيد الإنشاء', 'مكتمل'];
+document.getElementById('project-tabs').innerHTML = tabs.map(t => <button class="rounded-2xl px-5 py-2 text-xs font-bold transition-all duration-300 ${t === projectState ? 'bg-brand-gold text-brand-navy shadow-lg font-black' : 'app-card text-[var(--text-secondary)]'}" onclick="projectState='${t}';renderProjects()">${t}</button>).join('');
+const items = projectState === 'الكل' ? appData.projects : appData.projects.filter(p => p.state === projectState);
+document.getElementById('projects-grid').innerHTML = items.map(projectCard).join('');
+}
+​// Page Navigation & Transitions Engine
+function switchView(name) {
+document.querySelectorAll('.view-section').forEach(v => v.classList.add('hidden'));
+const selected = document.getElementById(view-${name});
+if(selected) selected.classList.remove('hidden');
+​document.querySelectorAll('[data-view]').forEach(x => {
+x.classList.toggle('active', x.dataset.view === name);
+});
+​if(name === 'favorites') renderFavorites();
+​window.scrollTo({ top: 0, behavior: 'smooth' });
+history.pushState({ view: name }, '', #${name});
+initScrollReveal();
+}
+​window.addEventListener('popstate', (e) => {
+const modal = document.getElementById('modal-root');
+if(modal && modal.children.length > 0) {
+closeModal();
+return;
+}
+if(e.state && e.state.view) {
+switchView(e.state.view);
+} else {
+switchView('home');
+}
+});
+​// Smart Scroll & Header Behaviors
+let lastScrollY = window.scrollY;
+let ticking = false;
+​window.addEventListener('scroll', () => {
+if(!ticking) {
+window.requestAnimationFrame(() => {
+const currentScrollY = window.scrollY;
+const bottomNav = document.getElementById('bottom-nav');
+const desktopHeader = document.getElementById('site-toolbar');
+const progressBar = document.getElementById('scroll-progress');
+​const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+if(progressBar) progressBar.style.width = ${(currentScrollY / maxScroll) * 100}%;
+​if(currentScrollY > lastScrollY && currentScrollY > 120) {
+if(bottomNav) bottomNav.classList.add('nav-hidden');
+if(desktopHeader) desktopHeader.classList.add('header-hidden');
+} else {
+if(bottomNav) bottomNav.classList.remove('nav-hidden');
+if(desktopHeader) desktopHeader.classList.remove('header-hidden');
+}
+​lastScrollY = currentScrollY;
+ticking = false;
+});
+ticking = true;
+}
+}, { passive: true });
+​// Desktop Cursor Glow Effect
+window.addEventListener('mousemove', (e) => {
+const cursor = document.getElementById('cursor-glow');
+if(cursor) {
+cursor.style.left = e.clientX + 'px';
+cursor.style.top = e.clientY + 'px';
+}
+});
+​// IntersectionObserver for Scroll Reveal
+function initScrollReveal() {
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if(entry.isIntersecting) {
+entry.target.classList.add('revealed');
+}
+});
+}, { threshold: 0.1 });
+​document.querySelectorAll('.reveal-on-scroll').forEach(el => observer.observe(el));
+}
+​// Theme Engine
+function applyTheme(theme) {
+document.documentElement.dataset.theme = theme;
+document.documentElement.classList.toggle('dark', theme === 'dark');
+localStorage.setItem('alradhi-theme', theme);
+const icon = document.getElementById('theme-icon');
+if(icon) icon.className = theme === 'dark' ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
+}
+​function toggleTheme() {
+const nextTheme = document.documentElement.dataset.theme === 'dark' ? 'light' : 'dark';
+applyTheme(nextTheme);
+showToast(nextTheme === 'dark' ? 'تم تفعيل الوضع الداكن الفاخر' : 'تم تفعيل الوضع الفاتح المعماري');
+}
+​// Modal Sheet Management
+function closeModal() {
+document.getElementById('modal-root').innerHTML = '';
+document.body.classList.remove('overflow-hidden');
+}
+​function modalShell(title, body) {
+document.body.classList.add('overflow-hidden');
+document.getElementById('modal-root').innerHTML =  <div class="fixed inset-0 z-[100] flex items-end sm:items-center justify-center bg-black/75 backdrop-blur-md p-0 sm:p-4" onclick="if(event.target===this)closeModal()"> <div class="app-modal w-full max-w-xl max-h-[90vh] overflow-y-auto rounded-t-3xl sm:rounded-3xl glass-panel p-6 shadow-2xl border border-brand-gold/30"> <div class="flex items-center justify-between pb-4 mb-5 border-b border-[var(--border-color)]"> <h2 class="text-lg font-black truncate">${title}</h2> <button onclick="closeModal()" class="flex h-9 w-9 items-center justify-center rounded-full bg-[var(--bg-secondary)] text-xs text-[var(--text-secondary)] hover:text-white transition"><i class="fa-solid fa-xmark"></i></button> </div> ${body} </div> </div>;
+}
+​// Property Details Modal
+function openProperty(id) {
+const p = appData.properties.find(x => x.id === id);
+const isFav = favorites.includes(p.id);
+modalShell(p.name, `
+<div>
+<div class="relative h-64 overflow-hidden rounded-2xl">
+<img class="h-full w-full object-cover" src="${p.image}" alt="${p.name}">
+<div class="absolute inset-0 bg-gradient-to-t from-[#070E17]/80 via-transparent to-transparent"></div>
+<span class="absolute right-3 top-3 rounded-xl bg-brand-gold px-3 py-1 text-xs font-black text-brand-navy">${p.purpose}</span>
+</div>
+​<div class="mt-5 flex items-center justify-between">
+<div>
+<span class="text-xs font-bold text-[var(--text-secondary)]"><i class="fa-solid fa-location-dot ml-1 text-brand-gold"></i>{p.city}، ${p.area}</span>
+<h3 class="text-xl font-black mt-0.5">${p.name}</h3>
+</div>
+<span class="text-2xl font-black gold-gradient-text">{p.priceLabel}</span>
+</div>
+​<p class="mt-4 text-xs leading-relaxed text-[var(--text-secondary)] font-medium">${p.description}</p>
+​<div class="mt-5 grid grid-cols-3 gap-3 text-center text-xs">
+<div class="app-card p-3 border border-brand-gold/20"><b>{p.size}</b> م²</div>
+<div class="app-card p-3 border border-brand-gold/20"><b>{p.rooms || '—'}</b> غرف</div>
+<div class="app-card p-3 border border-brand-gold/20"><b>${p.baths || '—'}</b> حمام</div>
+</div>
+​<div class="mt-4 flex flex-wrap gap-2">
+${p.features.map(f => <span class="chip px-3 py-1 rounded-lg text-[11px] font-bold">${f}</span>).join('')}
+</div>
+​<div class="mt-6 grid grid-cols-2 gap-3">
+<a class="gold-button flex items-center justify-center rounded-2xl py-3.5 text-xs font-black shadow-lg" href="[https://wa.me/$](https://wa.me/$){appData.settings.whatsapp}?text=${encodeURIComponent('استفسار عن عقار ' + p.code + ' - ' + p.name)}" target="_blank" rel="noopener">
+<i class="fa-brands fa-whatsapp ml-2 text-base"></i>تحدث مع مستشار
+</a>
+<button class="app-card rounded-2xl py-3.5 text-xs font-bold border border-brand-gold/30" onclick="toggleFavorite(${p.id});closeModal();">
+<i class="${isFav ? 'fa-solid text-red-500' : 'fa-regular'} fa-heart ml-1.5"></i>المفضلة
+</button>
+</div>
+</div>
+`);
+}
+​// Project Details Modal
+function openProject(id) {
+const p = appData.projects.find(x => x.id === id);
+modalShell(p.name, <div> <div class="relative h-64 overflow-hidden rounded-2xl"> <img class="h-full w-full object-cover" src="${p.image}" alt="${p.name}"> <div class="absolute inset-0 bg-gradient-to-t from-[#070E17]/80 via-transparent to-transparent"></div> <span class="absolute right-3 top-3 rounded-xl bg-brand-gold px-3 py-1 text-xs font-black text-brand-navy">${p.state}</span> </div> <p class="mt-4 text-xs leading-relaxed text-[var(--text-secondary)] font-medium">${p.desc}</p> <div class="mt-5 space-y-2 text-xs border-t border-[var(--border-color)] pt-4 font-semibold"> <p><b class="text-brand-goldLight">الموقع المميز:</b> ${p.location}</p> <p><b class="text-brand-goldLight">إجمالي الوحدات:</b> ${p.units} وحدة عقارية</p> <p><b class="text-brand-goldLight">الأنواع المتاحة:</b> ${p.types}</p> <p><b class="text-brand-goldLight">خطط الدفع:</b> ${p.payment}</p> </div> <button class="gold-button w-full mt-6 rounded-2xl py-4 text-xs font-black shadow-xl" onclick="closeModal();openModal('appointment')">حجز موعد أو طلب تفاصيل الاستثمار</button> </div>);
+}
+​function openModal(type) {
+const forms = {
+appointment: ['حجز موعد استشارة مخصصة',  <form onsubmit="submitDemoForm(event,'تم حجز موعد الاستشارة بنجاح. سيتواصل معك مستشار الراضي العقارية.')" class="space-y-4"> <input required class="input-ui" placeholder="الاسم الكامل"> <input required class="input-ui" type="tel" placeholder="رقم الهاتف"> <select class="select-ui"><option>شراء عقار سكني</option><option>استثمار تجاري</option><option>تسويق عقار</option></select> <input type="date" required class="input-ui"> <button class="gold-button w-full rounded-2xl py-4 text-xs font-black shadow-xl">تأكيد حجز الموعد</button> </form>]
+};
+if(forms[type]) modalShell(forms[type][0], forms[type][1]);
+}
+​function submitDemoForm(e, msg) {
+e.preventDefault();
+closeModal();
+if(e.target.reset) e.target.reset();
+showToast(msg);
+}
+​function toggleAssistant() {
+const panel = document.getElementById('assistant-panel');
+if(panel) panel.classList.toggle('hidden');
+}
+​let toastTimer;
+function showToast(msg) {
+const t = document.getElementById('toast');
+if(!t) return;
+t.textContent = msg;
+t.classList.remove('hidden');
+clearTimeout(toastTimer);
+toastTimer = setTimeout(() => t.classList.add('hidden'), 3500);
+}
+​document.addEventListener('keydown', e => { if(e.key === 'Escape') closeModal(); });
+​// Application Initialization Entry Point
+document.addEventListener('DOMContentLoaded', () => {
+initializeLogos();
+applyTheme(document.documentElement.dataset.theme || 'dark');
+renderAll();
+​// Cinematic Splash Screen FadeOut & Session Control
+setTimeout(() => {
+const intro = document.getElementById('intro-screen');
+if(intro) {
+intro.style.opacity = '0';
+setTimeout(() => intro.remove(), 700);
+}
+}, 1200);
+});
+</script>
+</body>
+  </html>
